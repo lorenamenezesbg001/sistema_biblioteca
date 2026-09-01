@@ -1,0 +1,19 @@
+<%- include('../cabecalho.ejs')%>
+    <h1>Editar Autor</h1>
+    <div>
+        <a href="/autor/lst">Listar</a>
+    </div>
+    <div>
+        <form method="post">
+
+            <input type="hidden" name="id" value="<%=Autor.id%>"><br>
+            <label>Nome:</label>
+            <input type="text" name="nome" value="<%=Autor.nome%>"><br>
+            <label>Local Nascimento:</label>
+            <input type="text" name="localNascimento" value="<%=Aluno.localNascimento%>"><br>
+            <button type="submit">Cadastrar</button>
+
+        </form>
+    </div>
+
+    <%- include('../rodape.ejs')%>

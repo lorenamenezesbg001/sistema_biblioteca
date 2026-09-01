@@ -1,0 +1,41 @@
+<%- include('../cabecalho.ejs')%>
+    <h1>Autores</h1>
+    <div>
+        <form action="
+        " method="post">
+            <input type="text" name="filtro" id="" placeholder="Digite o nome">
+            <button type="submit">Pesquisar</button>
+        </form>
+    </div>
+    <a href="/autor/add">+ Autor</a>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Local de Nascimento</td>
+            <td>Foto</td>
+            <td>Ações</td>
+        </tr>
+
+        <%for (const {id, nome, localNascimento, fotoAutor} of Autores) {%>
+            <tr>
+                <td>
+                    <%=nome%>
+                </td>
+                <td>
+                    <%=localNascimento%>
+                </td>
+                <td>
+                    <%if(autor.fotoAutor) { %>
+                        <img src="<%=autor.fotoAutor%>" alt="fotoAutor"
+                            style="width: 100px; height: 100px; object-fit: cover;">
+                        <% } else { %>
+                            Sem foto
+                            <% } %>
+                </td>
+                <td><a href="/autor/edt/<%=id%>">Editar</a>
+                    <a href="/autor/del/<%=id%>">Excluir</a>
+                </td>
+            </tr>
+            <%}%>
+    </table>
+    <%- include('../rodape.ejs')%>

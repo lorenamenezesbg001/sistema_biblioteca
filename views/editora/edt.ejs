@@ -1,0 +1,17 @@
+<%- include('../cabecalho.ejs')%>
+    <h1>Editar Editora</h1>
+    <div>
+        <a href="/editora/lst">Listar editora</a>
+    </div>
+    <div>
+        <form method="post">
+
+            <input type="hidden" name="id" value="<%=Editora.id%>"><br>
+            <label>Nome:</label>
+            <input type="text" name="nome" value="<%=Editora.nome%>"><br>
+            <button type="submit">Cadastrar</button>
+
+        </form>
+    </div>
+
+    <%- include('../rodape.ejs')%>

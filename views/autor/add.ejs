@@ -1,0 +1,19 @@
+<%- include('../cabecalho.ejs')%>
+    <h1>Adicionar Autor</h1>
+    <div>
+        <a href="/autor/lst">Listar autores</a>
+    </div>
+    <div>
+        <form method="post">
+            <label>Nome:</label>
+            <input type="text" name="nome"><br>
+            <label>Local de Nascimento:</label>
+            <input type="text" name="localNascimento"><br>
+            <label for="fotoAutor">Foto:</label>
+            <input type="file" id="fotoAutor" name="fotoAutor">
+            <button type="submit">Cadastrar</button>
+
+        </form>
+    </div>
+
+    <%- include('../rodape.ejs')%>
