@@ -10,8 +10,7 @@ const upload = multer({ storage });
 const caminhobase = 'autor/'
 
 router.get('/' + caminhobase + 'add', controle.openAdd)
-router.post('/marca/add/ok',upload.single('fotoAutor'),controle.add)
-router.post('/' + caminhobase + 'add', controle.add)
+router.post('/' + caminhobase + 'add' ,upload.single('fotoAutor'), controle.add)
 router.get('/' + caminhobase + 'lst', controle.list)
 router.post('/' + caminhobase + 'lst', controle.find)
 router.get('/' + caminhobase + 'del/:id', controle.del)

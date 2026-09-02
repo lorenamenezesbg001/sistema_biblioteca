@@ -11,6 +11,7 @@ export default class AutorController{
         }
         this.add = async(req, res)=>{
             //cria o Aluno
+            
            let fotoEnviada
            if(req.file!=null){
             console.log("Deu certo")
