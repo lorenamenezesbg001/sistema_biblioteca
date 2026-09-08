@@ -15,5 +15,5 @@ router.get('/' + caminhobase + 'lst', controle.list)
 router.post('/' + caminhobase + 'lst', controle.find)
 router.get('/' + caminhobase + 'del/:id', controle.del)
 router.get('/' + caminhobase + 'edt/:id', controle.openEdt)
-router.post('/' + caminhobase + 'edt/:id', controle.edt)
+router.post('/' + caminhobase + 'edt/:id', upload.single('fotoAutor'), controle.edt)
 export default router

@@ -1,8 +1,7 @@
 <%- include('../cabecalho.ejs')%>
     <h1>Autores</h1>
     <div>
-        <form action="
-        " method="post">
+        <form action="/autor/lst" method="post">
             <input type="text" name="filtro" id="" placeholder="Digite o nome">
             <button type="submit">Pesquisar</button>
         </form>
@@ -16,26 +15,26 @@
             <td>Ações</td>
         </tr>
 
-        <%for (const {id, nome, localNascimento, fotoAutor} of Autores) {%>
+        <% for (const autor of Autores) { %>
             <tr>
                 <td>
-                    <%=nome%>
+                    <%= autor.nome %>
                 </td>
                 <td>
-                    <%=localNascimento%>
+                    <%= autor.localNascimento %>
                 </td>
                 <td>
-                    <%if(fotoAutor) { %>
-                        <img src="<%=fotoAutor%>" alt="fotoAutor"
-                            style="width: 100px; height: 100px; object-fit: cover;">
+                    <% if (autor.fotoAutor) { %>
+                        <img src="<%= autor.fotoAutor %>" width="100" height="100" alt="Foto do autor">
                         <% } else { %>
                             Sem foto
                             <% } %>
                 </td>
-                <td><a href="/autor/edt/<%=id%>">Editar</a>
-                    <a href="/autor/del/<%=id%>">Excluir</a>
+                <td>
+                    <a href="/autor/edt/<%= autor._id %>">Editar</a>
+                    <a href="/autor/del/<%= autor._id %>">Excluir</a>
                 </td>
             </tr>
-            <%}%>
+            <% } %>
     </table>
     <%- include('../rodape.ejs')%>

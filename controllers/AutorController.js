@@ -10,60 +10,53 @@ export default class AutorController{
             res.render(caminhoBase + "add")
         }
         this.add = async(req, res)=>{
-            //cria o Aluno
-            
-           let fotoEnviada
-           if(req.file!=null){
-            console.log("Deu certo")
-            fotoEnviada = req.file.buffer
-           }
-           else{
-            console.log("Não deu certo")
-            fotoEnviada = null
-           }
-            
             await Autor.create({
                 nome: req.body.nome,
-                localNascimento:req.body.localNascimento,
-                fotoAutor:fotoEnviada
+                localNascimento: req.body.localNascimento,
+                fotoAutor: req.file ? req.file.buffer : null
             });
-            res.redirect('/'+caminhoBase + 'add');
+            res.redirect('/' + caminhoBase + 'add');
         }
         this.list = async(req, res)=>{
-            const resultado = await Autor.find({})
-            res.render(caminhoBase + 'lst', {Autores:resultado})
+            const Autores = await Autor.find({});
+            res.render(caminhoBase + 'lst', { Autores });
         }
         this.find = async(req, res)=>{
             const filtro = req.body.filtro;
-            const resultado = await 
-            Autor.find({ nome: { $regex: filtro,
-                $options: "i" }})
-            res.render(caminhoBase + 'lst', {Autores:resultado})
+            const resultado = await Autor.find({
+                nome: { $regex: filtro, $options: "i" }
+            }).lean();
+            const Autores = resultado.map((autor) => ({
+                ...autor,
+                fotoAutor: autor.fotoAutor
+                    ? `data:image/jpeg;base64,${Buffer.from(autor.fotoAutor).toString('base64')}`
+                    : null
+            }));
+            res.render(caminhoBase + 'lst', { Autores });
         }
 
-     
-
-         this.openEdt = async(req, res)=>{
-            //passar quem eu quero editar
-            const id = req.params.id
-            console.log(id)
-            const autor = await Autor.findById(id) 
-            console.log(autor)
-            res.render(caminhoBase + "edt", 
-                {Autor:autor})
+        this.openEdt = async(req, res)=>{
+            const id = req.params.id;
+            const autor = await Autor.findById(id).lean();
+            if (autor && autor.fotoAutor) {
+                autor.fotoAutor = `data:image/jpeg;base64,${Buffer.from(autor.fotoAutor).toString('base64')}`;
+            }
+            res.render(caminhoBase + "edt", { Autor: autor });
         }
-
 
         this.edt = async(req, res)=>{
-        await Autor.findByIdAndUpdate(req.params.id, req.body)
-        res.redirect('/'+caminhoBase + 'lst');
-        
+            const dados = {
+                nome: req.body.nome,
+                localNascimento: req.body.localNascimento,
+                ...(req.file ? { fotoAutor: req.file.buffer } : {})
+            };
+            await Autor.findByIdAndUpdate(req.params.id, dados);
+            res.redirect('/' + caminhoBase + 'lst');
         }
 
-         this.del = async(req, res)=>{
-        await Autor.findByIdAndDelete(req.params.id)
-        res.redirect('/'+caminhoBase + 'lst');
-        
+        this.del = async(req, res)=>{
+            await Autor.findByIdAndDelete(req.params.id);
+            res.redirect('/' + caminhoBase + 'lst');
         }
 
     }

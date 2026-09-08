@@ -4,17 +4,18 @@
         <a href="/autor/lst">Listar</a>
     </div>
     <div>
-        <form method="post">
-
-            <input type="hidden" name="id" value="<%=Autor.id%>"><br>
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<%= Autor._id %>"><br>
             <label>Nome:</label>
-            <input type="text" name="nome" value="<%=Autor.nome%>"><br>
+            <input type="text" name="nome" value="<%= Autor.nome %>"><br>
             <label>Local Nascimento:</label>
-            <input type="text" name="localNascimento" value="<%=Autor.localNascimento%>"><br>
+            <input type="text" name="localNascimento" value="<%= Autor.localNascimento %>"><br>
             <label>Foto:</label>
-            <input type="file" name="fotoAutor" value="<%=Autor.fotoAutor%>"><br>
-            <button type="submit">Cadastrar</button>
-
+            <% if (Autor.fotoAutor) { %>
+                <img src="<%= Autor.fotoAutor %>" width="100" height="100"><br>
+                <% } %>
+                    <input type="file" name="fotoAutor"><br>
+                    <button type="submit">Cadastrar</button>
         </form>
     </div>
 
