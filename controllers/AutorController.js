@@ -29,7 +29,7 @@ export default class AutorController{
             const Autores = resultado.map((autor) => ({
                 ...autor,
                 fotoAutor: autor.fotoAutor
-                    ? `data:image/jpeg;base64,${Buffer.from(autor.fotoAutor).toString('base64')}`
+                    ? `data:image/png;base64,${Buffer.from(autor.fotoAutor).toString('base64')}`
                     : null
             }));
             res.render(caminhoBase + 'lst', { Autores });
@@ -39,7 +39,7 @@ export default class AutorController{
             const id = req.params.id;
             const autor = await Autor.findById(id).lean();
             if (autor && autor.fotoAutor) {
-                autor.fotoAutor = `data:image/jpeg;base64,${Buffer.from(autor.fotoAutor).toString('base64')}`;
+                autor.fotoAutor = `data:image/png;base64,${Buffer.from(autor.fotoAutor).toString('base64')}`;
             }
             res.render(caminhoBase + "edt", { Autor: autor });
         }
