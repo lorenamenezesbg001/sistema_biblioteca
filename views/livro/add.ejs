@@ -1,0 +1,11 @@
+<div class="mb-3">
+    <label for="genero" class="form-label">Gênero</label>
+    <select name="genero" id="genero" class="form-control">
+        <option value="">selecione</option>
+        <%Generos.forEach(function(genero){%>
+            <option value='<%=time.id%>'>
+                <%=genero.nome%>
+            </option>
+            <%})%>
+    </select>
+</div>
