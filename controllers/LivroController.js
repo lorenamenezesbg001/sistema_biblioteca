@@ -1,5 +1,6 @@
 //importar o Model
 import Livro from '../models/livro.js'
+import Genero from '../models/genero.js'
 
 export default class LivroController{
 
@@ -7,7 +8,7 @@ export default class LivroController{
         this.caminhoBase = caminhoBase
     
         this.openAdd = async(req, res)=>{
-            res.render(caminhoBase + "add")
+           
         // Buscar a entidade relacionada para permitir seleção
         const resultado = await Genero.find({});
         // Enviar na renderização a lista de gêneros
@@ -26,12 +27,13 @@ export default class LivroController{
             titulo: req.body.titulo,
             descricao: req.body.descricao,
             anoPublicacao: req.body.anoPublicacao,
+            fotoLivro: req.body.fotoLivro,
             genero: jgenero
             });
             res.redirect('/'+caminhoBase + 'add');
         }
         this.list = async(req, res)=>{
-            const resultado = await Livro.find({})
+            const resultado = await Livro.find({}).populate("genero")
             res.render(caminhoBase + 'lst', {Livros:resultado})
         }
         this.find = async(req, res)=>{
@@ -41,6 +43,20 @@ export default class LivroController{
                 $options: "i" }})
             res.render(caminhoBase + 'lst', {Livros:resultado})
         }
+
+        this.find = async(req, res)=>{
+                    const filtro = req.body.filtro;
+                    const resultado = await Livro.find({
+                        titulo: { $regex: filtro, $options: "i" }
+                    }).lean();
+                    const Livros = resultado.map((livro) => ({
+                        ...livro,
+                        fotoLivro: livro.fotoLivro
+                            ? `data:image/png;base64,${Buffer.from(livro.fotoLivro).toString('base64')}`
+                            : null
+                    }));
+                    res.render(caminhoBase + 'lst', { Livros });
+                }
 
          this.openEdt = async(req, res)=>{
             //passar quem eu quero editar

@@ -1,0 +1,44 @@
+<%- include('../cabecalho.ejs')%>
+    <h1>Livros</h1>
+    <div>
+        <form action="/livro/lst" method="post">
+            <input type="text" name="filtro" id="" placeholder="Digite o nome do livro">
+            <button type="submit">Pesquisar</button>
+        </form>
+    </div>
+    <a href="/livro/add">+ Novo Livro</a>
+    <table>
+        <tr>
+            <td>Título</td>
+            <td>Descrição</td>
+            <td>Ano de publicação</td>
+            <td>Foto</td>
+            <td>Ações</td>
+        </tr>
+
+        <% for (const livro of Livros) { %>
+            <tr>
+                <td>
+                    <%= livro.titulo %>
+                </td>
+                <td>
+                    <%= livro.descricao %>
+                </td>
+                <td>
+                    <%= livro.anoPublicacao %>
+                </td>
+                <td>
+                    <% if (livro.fotoLivro) { %>
+                        <img src="<%= livro.fotoLivro%>" width="100" height="100" alt="Foto do livro">
+                        <% } else { %>
+                            Sem foto
+                            <% } %>
+                </td>
+                <td>
+                    <a href="/livro/edt/<%= livro._id %>">Editar</a>
+                    <a href="/livro/del/<%= livro._id %>">Excluir</a>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+    <%- include('../rodape.ejs')%>

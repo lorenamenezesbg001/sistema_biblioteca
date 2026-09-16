@@ -5,6 +5,7 @@ import routes from './routes/route.js'; // rotas externas
 import autorRoutes from './routes/AutorRoutes.js'; // rotas externas
 import editoraRoutes from './routes/EditoraRoutes.js'; // rotas externas
 import generoRoutes from './routes/GeneroRoutes.js'; // rotas externas
+import livroRoutes from './routes/LivroRoutes.js'; // rotas externas
 import multer from 'multer';
 
 const storage = multer.memoryStorage();
@@ -29,6 +30,7 @@ app.set('views', join(__dirname, '/views'));
 app.use(autorRoutes)
 app.use(generoRoutes)
 app.use(editoraRoutes)
+app.use(livroRoutes)
 app.use(routes)
 app.listen(PORT, ()=>{
  console.log(

@@ -1,0 +1,24 @@
+<%- include('../cabecalho.ejs')%>
+    <h1>Editar Livro</h1>
+    <div>
+        <a href="/livro/lst">Listar</a>
+    </div>
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<%= Livro._id %>"><br>
+            <label>Título:</label>
+            <input type="text" name="titulo" value="<%= Livro.titulo %>"><br>
+            <label>Descrição:</label>
+            <input type="text" name="descricao" value="<%= Livro.descricao %>"><br>
+            <label>Ano de publicação:</label>
+            <input type="text" name="anoPublicacao" value="<%= Livro.anoPublicacao %>"><br>
+            <label>Foto:</label>
+            <% if (Livro.fotoLivro) { %>
+                <img src="<%= Livro.fotoLivro %>" width="100" height="100"><br>
+                <% } %>
+                    <input type="file" name="fotoLivro"><br>
+                    <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <%- include('../rodape.ejs')%>

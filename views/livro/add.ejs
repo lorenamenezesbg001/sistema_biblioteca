@@ -1,11 +1,30 @@
-<div class="mb-3">
-    <label for="genero" class="form-label">Gênero</label>
-    <select name="genero" id="genero" class="form-control">
-        <option value="">selecione</option>
-        <%Generos.forEach(function(genero){%>
-            <option value='<%=time.id%>'>
-                <%=genero.nome%>
-            </option>
-            <%})%>
-    </select>
-</div>
+<%- include('../cabecalho.ejs')%>
+    <h1>Adicionar Livro</h1>
+    <div>
+        <a href="/livro/lst">Listar livros</a>
+    </div>
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            <label>Título:</label>
+            <input type="text" name="titulo"><br>
+            <label>Descrição:</label>
+            <input type="text" name="descricao"><br>
+            <label>Ano de publicação:</label>
+            <input type="number" name="anoPublicacao"><br>
+            <label for="fotoLivro">Foto:</label>
+            <input type="file" id="fotoLivro" name="fotoLivro"> <br>
+            <label for="genero" class="form-label">Gênero</label>
+            <select name="genero" id="genero" class="form-control">
+                <option value="">selecione</option>
+                <%Generos.forEach(function(genero){%>
+                    <option value='<%=genero.id%>'>
+                        <%=genero.nome%>
+                    </option>
+                    <%})%>
+            </select>
+            <button type="submit">Cadastrar</button>
+
+        </form>
+    </div>
+
+    <%- include('../rodape.ejs')%>
