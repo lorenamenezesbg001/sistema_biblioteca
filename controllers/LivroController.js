@@ -22,12 +22,21 @@ export default class LivroController{
             if(req.body.genero != null) {
             jgenero = await Genero.findById(req.body.genero)
             }
+            let fotoEnviada
+           if(req.file!=null){
+            console.log(" foi")
+            fotoEnviada = req.file.buffer
+           }
+           else{
+            console.log("nao foi")
+            fotoEnviada = null
+           }
  
             await Livro.create({
             titulo: req.body.titulo,
             descricao: req.body.descricao,
             anoPublicacao: req.body.anoPublicacao,
-            fotoLivro: req.body.fotoLivro,
+            fotoLivro: fotoEnviada,
             genero: jgenero
             });
             res.redirect('/'+caminhoBase + 'add');

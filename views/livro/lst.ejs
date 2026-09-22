@@ -13,6 +13,7 @@
             <td>Descrição</td>
             <td>Ano de publicação</td>
             <td>Foto</td>
+            <td>Gênero</td>
             <td>Ações</td>
         </tr>
 
@@ -33,6 +34,9 @@
                         <% } else { %>
                             Sem foto
                             <% } %>
+                </td>
+                <td>
+                    <%=genero !=null ? genero.nome : "" %>
                 </td>
                 <td>
                     <a href="/livro/edt/<%= livro._id %>">Editar</a>

@@ -16,6 +16,14 @@
             <% if (Livro.fotoLivro) { %>
                 <img src="<%= Livro.fotoLivro %>" width="100" height="100"><br>
                 <% } %>
+                    <select name="genero" id="genero" class="form-control">
+                        <option value="">selecione</option>
+                        <%Generos.forEach(function(genero){%>
+                            <option value='<%=genero.id%>'>
+                                <%=genero.nome%>
+                            </option>
+                            <%})%>
+                    </select>
                     <input type="file" name="fotoLivro"><br>
                     <button type="submit">Cadastrar</button>
         </form>
