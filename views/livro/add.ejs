@@ -15,10 +15,26 @@
             <input type="file" id="fotoLivro" name="fotoLivro"> <br>
             <label for="genero" class="form-label">Gênero</label>
             <select name="genero" id="genero" class="form-control">
-                <option value="">selecione</option>
+                <option value="">Selecione o gênero</option>
                 <%Generos.forEach(function(genero){%>
                     <option value='<%=genero.id%>'>
                         <%=genero.nome%>
+                    </option>
+                    <%})%>
+            </select>
+            <select name="autor" id="autor" class="form-control">
+                <option value="">Selecione o autor</option>
+                <%Autores.forEach(function(autor){%>
+                    <option value='<%=autor.id%>'>
+                        <%=autor.nome%>
+                    </option>
+                    <%})%>
+            </select>
+            <select name="editora" id="editora" class="form-control">
+                <option value="">Selecione a editora</option>
+                <%Editoras.forEach(function(editora){%>
+                    <option value='<%=editora.id%>'>
+                        <%=editora.nome%>
                     </option>
                     <%})%>
             </select>

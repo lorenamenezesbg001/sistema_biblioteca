@@ -14,23 +14,25 @@
             <td>Ano de publicação</td>
             <td>Foto</td>
             <td>Gênero</td>
+            <td>Autor</td>
+            <td>Editora</td>
             <td>Ações</td>
         </tr>
 
-        <% for (const livro of Livros) { %>
+        <% for (const {id, titulo, descricao, anoPublicacao, fotoLivro, genero, autor, editora} of Livros) { %>
             <tr>
                 <td>
-                    <%= livro.titulo %>
+                    <%= titulo %>
                 </td>
                 <td>
-                    <%= livro.descricao %>
+                    <%= descricao %>
                 </td>
                 <td>
-                    <%= livro.anoPublicacao %>
+                    <%= anoPublicacao %>
                 </td>
                 <td>
-                    <% if (livro.fotoLivro) { %>
-                        <img src="<%= livro.fotoLivro%>" width="100" height="100" alt="Foto do livro">
+                    <% if (fotoLivro) { %>
+                        <img src="<%=fotoLivro%>" width="100" height="100" alt="Foto do livro">
                         <% } else { %>
                             Sem foto
                             <% } %>
@@ -39,8 +41,14 @@
                     <%=genero !=null ? genero.nome : "" %>
                 </td>
                 <td>
-                    <a href="/livro/edt/<%= livro._id %>">Editar</a>
-                    <a href="/livro/del/<%= livro._id %>">Excluir</a>
+                    <%=autor !=null ? autor.nome : "" %>
+                </td>
+                <td>
+                    <%=editora !=null ? editora.nome : "" %>
+                </td>
+                <td>
+                    <a href="/livro/edt/<%= id %>">Editar</a>
+                    <a href="/livro/del/<%= id %>">Excluir</a>
                 </td>
             </tr>
             <% } %>

@@ -1,6 +1,8 @@
 //importar o Model
 import Livro from '../models/livro.js'
 import Genero from '../models/genero.js'
+import Autor from '../models/autor.js'
+import Editora from '../models/editora.js'
 
 export default class LivroController{
 
@@ -11,16 +13,28 @@ export default class LivroController{
            
         // Buscar a entidade relacionada para permitir seleção
         const resultado = await Genero.find({});
+         const resultado2 = await Autor.find({});
+           const resultado3 = await Editora.find({});
         // Enviar na renderização a lista de gêneros
         res.render(caminhoBase + "add", {
-        Generos: resultado})
+        Generos: resultado,Autores: resultado2,  Editoras: resultado3})
         }
+
         this.add = async(req, res)=>{
             //cria o Livro
            let jgenero = null;
              // Se vier seleção de genero, busca o objeto
             if(req.body.genero != null) {
             jgenero = await Genero.findById(req.body.genero)
+            let jautor = null;
+             // Se vier seleção de autor, busca o objeto
+            if(req.body.autor != null) {
+            jautor = await Autor.findById(req.body.autor)
+            let jeditora = null;
+             // Se vier seleção de editora, busca o objeto
+            if(req.body.editora != null) {
+            jeditora = await Editora.findById(req.body.editora)
+            }
             }
             let fotoEnviada
            if(req.file!=null){
@@ -37,7 +51,9 @@ export default class LivroController{
             descricao: req.body.descricao,
             anoPublicacao: req.body.anoPublicacao,
             fotoLivro: fotoEnviada,
-            genero: jgenero
+            genero: jgenero,
+            autor:jautor,
+            editora: jeditora
             });
             res.redirect('/'+caminhoBase + 'add');
         }
@@ -91,4 +107,4 @@ export default class LivroController{
         }
 
     }
-}
+}}

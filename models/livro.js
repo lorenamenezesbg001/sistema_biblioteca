@@ -24,7 +24,7 @@ const Livro = conexao.Schema({
  genero: {
  type: conexao.Types.ObjectId, 
  ref: "Genero",
- required: false
+ required: false,
  }
 });
 
