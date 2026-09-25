@@ -25,6 +25,16 @@ const Livro = conexao.Schema({
  type: conexao.Types.ObjectId, 
  ref: "Genero",
  required: false,
+ },
+ autor: {
+ type: conexao.Types.ObjectId, 
+ ref: "Autor",
+ required: false,
+ },
+ editora: {
+ type: conexao.Types.ObjectId, 
+ ref: "Editora",
+ required: false,
  }
 });
 

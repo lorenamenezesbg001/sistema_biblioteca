@@ -57,7 +57,11 @@ export default class LivroController {
     };
 
     this.list = async (req, res) => {
-      const resultado = await Livro.find({}).populate('genero');
+      const resultado = await Livro.find({})
+        .populate('genero')
+        .populate('autor')
+        .populate('editora');
+
       res.render(this.caminhoBase + 'lst', { Livros: resultado });
     };
 
@@ -65,7 +69,11 @@ export default class LivroController {
       const filtro = req.body.filtro;
       const resultado = await Livro.find({
         titulo: { $regex: filtro,$options: 'i' },
-      }).lean();
+      })
+        .populate('genero')
+        .populate('autor')
+        .populate('editora')
+        .lean();
 
       const Livros = resultado.map((livro) => ({
         ...livro,
@@ -78,10 +86,21 @@ export default class LivroController {
     };
 
     this.openEdt = async (req, res) => {
-      const id = req.params.id;
-      const livro = await Livro.findById(id);
-      res.render(this.caminhoBase + 'edt', { Livro: livro });
-    };
+  const id = req.params.id;
+  const livro = await Livro.findById(id);
+
+  // Busca as listas para preencher os <select> na tela de edição
+  const generos = await Genero.find({});
+  const autores = await Autor.find({});
+  const editoras = await Editora.find({});
+
+  res.render(this.caminhoBase + 'edt', {
+    Livro: livro,
+    Generos: generos,
+    Autores: autores,
+    Editoras: editoras,
+  });
+};
 
     this.edt = async (req, res) => {
       await Livro.findByIdAndUpdate(req.params.id, req.body);

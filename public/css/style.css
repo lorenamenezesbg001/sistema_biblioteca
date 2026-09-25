@@ -1,7 +1,7 @@
 /* Estilos Gerais */
 body {
   font-family: Arial, sans-serif;
-  background-color: #251c01;
+  background-color: #bfd4e4;
   margin: 0;
   padding: 0;
   display: flex;
@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-  background-color: #f3f17b;
+  background-color: #86ac82;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(58, 38, 1, 0.445);
@@ -24,7 +24,7 @@ body {
 
 h1 {
   text-align: center;
-  color: #184d08;
+  color: #2e084d;
   margin-bottom: 20px;
 }
 
@@ -85,7 +85,7 @@ h3 {
 }
 
 .btn {
-  background-color: #6793f1;
+  background-color: #fac1fc;
   color: #fff;
 }
 
