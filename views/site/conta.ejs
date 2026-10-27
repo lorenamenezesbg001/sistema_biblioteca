@@ -1,0 +1,28 @@
+<%- include('cabecalho.ejs')%>
+    <!doctype html>
+    <html lang="pt-BR">
+    <main>
+        <link rel="stylesheet" href="/site/conta.ejs">
+        <section class="account-page">
+            <div class="account-panel">
+                <div class="account-intro">
+                    <p class="eyebrow">SEU ESPAÇO DE LEITURA</p>
+                    <h1>Que bom ter você por aqui.</h1>
+                    <p>Este formulário é uma apresentação visual estática. A autenticação deverá ser conectada ao
+                        back-end.</p>
+                </div>
+                <form class="login-card" action="conta.html" method="get">
+                    <h2>Crie sua conta</h2><label>Nome completo<input type="text" name="nome"
+                            placeholder="Como podemos chamar você?" required></label><label>E-mail<input type="email"
+                            name="email" placeholder="voce@email.com" required></label><label>Senha<input
+                            type="password" name="senha" placeholder="Sua senha" required></label><button
+                        class="primary-button" type="submit">Cadastrar</button>
+                    <p>Já possui uma conta? <a href="conta.html">Fazer login</a></p>
+                </form>
+            </div>
+        </section>
+    </main>
+    <%- include('rodape.ejs')%>
+        </body>
+
+    </html>

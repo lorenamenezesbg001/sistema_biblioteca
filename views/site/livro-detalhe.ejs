@@ -1,0 +1,35 @@
+<%- include('cabecalho.ejs')%>
+    <!doctype html>
+    <html lang="pt-BR">
+    <main>
+        <link rel="stylesheet" href="/site/livro-detalhe.ejs">
+        <section class="page-section container"><a class="back-link" href="acervo.html">← Voltar ao acervo</a>
+            <article class="static-book-detail"><img
+                    src="https://images.unsplash.com/photo-1573125716783-d05b57a86488?auto=format&fit=crop&w=900&q=85"
+                    alt="Capa ilustrativa de A Hora da Estrela">
+                <div class="modal-content">
+                    <p class="eyebrow">Romance brasileiro · 1977</p>
+                    <h1>A Hora da Estrela</h1>
+                    <p class="modal-author">por Clarice Lispector · Rocco</p>
+                    <p class="description">Um retrato íntimo e comovente de Macabéa, jovem nordestina que tenta
+                        encontrar seu lugar na cidade do Rio de Janeiro.</p>
+                    <div class="your-rating"><span>Sua avaliação</span>
+                        <fieldset class="css-rating">
+                            <legend class="sr-only">Avalie o livro</legend><input type="radio" name="nota"
+                                id="nota-0-5"><label for="nota-0-5" aria-label="Avaliar com 5 estrelas">★</label><input
+                                type="radio" name="nota" id="nota-0-4"><label for="nota-0-4"
+                                aria-label="Avaliar com 4 estrelas">★</label><input type="radio" name="nota"
+                                id="nota-0-3"><label for="nota-0-3" aria-label="Avaliar com 3 estrelas">★</label><input
+                                type="radio" name="nota" id="nota-0-2"><label for="nota-0-2"
+                                aria-label="Avaliar com 2 estrelas">★</label><input type="radio" name="nota"
+                                id="nota-0-1"><label for="nota-0-1" aria-label="Avaliar com 1 estrelas">★</label>
+                        </fieldset>
+                    </div><button class="primary-button reserve-button">Reservar este livro</button>
+                </div>
+            </article>
+        </section>
+    </main>
+    <%- include('rodape.ejs')%>
+        </body>
+
+    </html>

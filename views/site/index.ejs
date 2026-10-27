@@ -1,0 +1,186 @@
+<%- include('cabecalho.ejs')%>
+    <!doctype html>
+    <html lang="pt-BR">
+    <main>
+        <section class="hero">
+            <div class="hero-image" role="img" aria-label="Estantes de madeira repletas de livros"></div>
+            <div class="container hero-content">
+                <div class="hero-copy">
+                    <p class="hero-kicker">LEITURAS QUE ACOLHEM</p>
+                    <h1>Histórias para<br><em>todos os capítulos.</em></h1>
+                    <p>Explore nosso acervo, descubra novos mundos e encontre o seu próximo livro favorito.</p>
+                    <form class="hero-search" action="acervo.html"><svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <path d="m20 20-4-4"></path>
+                        </svg><input name="busca" placeholder="Busque por título, autor, gênero ou editora"
+                            aria-label="Pesquisar no acervo"><button type="submit">Buscar</button></form>
+                </div>
+
+
+            </div>
+        </section>
+        <section class="section container">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">ESCOLHAS DA SEMANA</p>
+                    <h2>Descubra novas histórias</h2>
+                </div><a class="text-link" href="acervo.html">Ver todo o acervo <svg width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m14 7 5 5-5 5"></path>
+                    </svg></a>
+            </div>
+            <div class="book-grid featured-grid">
+                <article class="book-card">
+                    <div class="cover-wrap">
+                        <a class="cover-button" href="livro-a-hora-da-estrela.html"
+                            aria-label="Ver detalhes de A Hora da Estrela"><img
+                                src="https://images.unsplash.com/photo-1573125716783-d05b57a86488?auto=format&fit=crop&w=900&q=85"
+                                alt="Capa ilustrativa de A Hora da Estrela" class="book-cover"></a>
+                        <input class="favorite-toggle" type="checkbox" id="fav-home-0"><label class="heart-button"
+                            for="fav-home-0" aria-label="Favoritar A Hora da Estrela"><svg width="20" height="20"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z">
+                                </path>
+                            </svg></label>
+                        <span class="availability available">Disponível</span>
+                    </div>
+                    <div class="book-copy">
+                        <p class="eyebrow">Romance brasileiro</p><a class="book-title"
+                            href="livro-a-hora-da-estrela.html">A Hora da Estrela</a>
+                        <p class="book-author">Clarice Lispector</p>
+                        <div class="stars stars-small" aria-label="5 de 5 estrelas"><span
+                                class="star active">★</span><span class="star active">★</span><span
+                                class="star active">★</span><span class="star active">★</span><span
+                                class="star active">★</span></div>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <div class="cover-wrap">
+                        <a class="cover-button" href="livro-o-jardim-secreto.html"
+                            aria-label="Ver detalhes de O Jardim Secreto"><img
+                                src="https://images.unsplash.com/photo-1529589585661-8fb5cdc75c48?auto=format&fit=crop&w=900&q=85"
+                                alt="Capa ilustrativa de O Jardim Secreto" class="book-cover"></a>
+                        <input class="favorite-toggle" type="checkbox" id="fav-home-1"><label class="heart-button"
+                            for="fav-home-1" aria-label="Favoritar O Jardim Secreto"><svg width="20" height="20"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z">
+                                </path>
+                            </svg></label>
+                        <span class="availability unavailable">Emprestado</span>
+                    </div>
+                    <div class="book-copy">
+                        <p class="eyebrow">Literatura clássica</p><a class="book-title"
+                            href="livro-o-jardim-secreto.html">O Jardim Secreto</a>
+                        <p class="book-author">Frances Hodgson Burnett</p>
+                        <div class="stars stars-small" aria-label="5 de 5 estrelas"><span
+                                class="star active">★</span><span class="star active">★</span><span
+                                class="star active">★</span><span class="star active">★</span><span
+                                class="star active">★</span></div>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <div class="cover-wrap">
+                        <a class="cover-button" href="livro-memorias-postumas.html"
+                            aria-label="Ver detalhes de Memórias Póstumas"><img
+                                src="https://images.unsplash.com/photo-1595123336219-5eedd543bc4a?auto=format&fit=crop&w=900&q=85"
+                                alt="Capa ilustrativa de Memórias Póstumas" class="book-cover"></a>
+                        <input class="favorite-toggle" type="checkbox" id="fav-home-2"><label class="heart-button"
+                            for="fav-home-2" aria-label="Favoritar Memórias Póstumas"><svg width="20" height="20"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z">
+                                </path>
+                            </svg></label>
+                        <span class="availability available">Disponível</span>
+                    </div>
+                    <div class="book-copy">
+                        <p class="eyebrow">Romance brasileiro</p><a class="book-title"
+                            href="livro-memorias-postumas.html">Memórias Póstumas</a>
+                        <p class="book-author">Machado de Assis</p>
+                        <div class="stars stars-small" aria-label="4 de 5 estrelas"><span
+                                class="star active">★</span><span class="star active">★</span><span
+                                class="star active">★</span><span class="star active">★</span><span
+                                class="star ">★</span></div>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <div class="cover-wrap">
+                        <a class="cover-button" href="livro-folhas-de-outono.html"
+                            aria-label="Ver detalhes de Folhas de Outono"><img
+                                src="https://images.unsplash.com/photo-1518281579100-d51bcf505b0e?auto=format&fit=crop&w=900&q=85"
+                                alt="Capa ilustrativa de Folhas de Outono" class="book-cover"></a>
+                        <input class="favorite-toggle" type="checkbox" id="fav-home-3"><label class="heart-button"
+                            for="fav-home-3" aria-label="Favoritar Folhas de Outono"><svg width="20" height="20"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z">
+                                </path>
+                            </svg></label>
+                        <span class="availability available">Disponível</span>
+                    </div>
+                    <div class="book-copy">
+                        <p class="eyebrow">Poesia</p><a class="book-title" href="livro-folhas-de-outono.html">Folhas de
+                            Outono</a>
+                        <p class="book-author">Lívia Azevedo</p>
+                        <div class="stars stars-small" aria-label="4 de 5 estrelas"><span
+                                class="star active">★</span><span class="star active">★</span><span
+                                class="star active">★</span><span class="star active">★</span><span
+                                class="star ">★</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="quote-band">
+            <div class="container quote-inner"><span class="quote-mark">“</span>
+                <blockquote>Um livro é um sonho que você segura nas mãos.</blockquote><span class="quote-author">— Neil
+                    Gaiman</span>
+            </div>
+        </section>
+        <section class="section container categories-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">ENCONTRE SEU CAMINHO</p>
+                    <h2>Explore por gênero</h2>
+                </div>
+            </div>
+            <div class="category-grid"><a class="category-card"
+                    href="acervo.html"><span>01</span><strong>Romance</strong><small>42 títulos</small><svg width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m14 7 5 5-5 5"></path>
+                    </svg></a><a class="category-card"
+                    href="acervo.html"><span>02</span><strong>Clássicos</strong><small>35 títulos</small><svg width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m14 7 5 5-5 5"></path>
+                    </svg></a><a class="category-card"
+                    href="acervo.html"><span>03</span><strong>Poesia</strong><small>28 títulos</small><svg width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m14 7 5 5-5 5"></path>
+                    </svg></a><a class="category-card"
+                    href="acervo.html"><span>04</span><strong>Mistério</strong><small>31 títulos</small><svg width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m14 7 5 5-5 5"></path>
+                    </svg></a></div>
+        </section>
+    </main>
+    <%- include('rodape.ejs')%>
+        </body>
+
+    </html>
