@@ -1,14 +1,14 @@
 <%- include('cabecalho.ejs')%>
     <main>
         <section class="page-section container">
-            <link rel="stylesheet" href="/site/acervo.ejs">
+            <link rel="stylesheet" href="/css/site.css">
             <div class="page-intro">
                 <p class="eyebrow">NOSSO ACERVO</p>
                 <h1>Encontre sua próxima leitura</h1>
                 <p>Consulte livros, autores, gêneros e editoras disponíveis no acervo.</p>
             </div>
-            <form class="catalog-search" action="acervo.html"><svg width="20" height="20" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            <form class="catalog-search" action="acervo.ejs"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
                     aria-hidden="true">
                     <circle cx="11" cy="11" r="7"></circle>
                     <path d="m20 20-4-4"></path>
@@ -22,8 +22,8 @@
             <div class="book-grid catalog-grid">
                 <article class="book-card">
                     <div class="cover-wrap">
-                        <a class="cover-button" href="livro-a-hora-da-estrela.html"
-                            aria-label="Ver detalhes de A Hora da Estrela"><img
+                        <a class="cover-button" href="livro-a-hora-da-estrela.ejs
+                        " aria-label="Ver detalhes de A Hora da Estrela"><img
                                 src="https://images.unsplash.com/photo-1573125716783-d05b57a86488?auto=format&fit=crop&w=900&q=85"
                                 alt="Capa ilustrativa de A Hora da Estrela" class="book-cover"></a>
                         <input class="favorite-toggle" type="checkbox" id="fav-catalog-0"><label class="heart-button"
@@ -38,7 +38,7 @@
                     </div>
                     <div class="book-copy">
                         <p class="eyebrow">Romance brasileiro</p><a class="book-title"
-                            href="livro-a-hora-da-estrela.html">A Hora da Estrela</a>
+                            href="livro-a-hora-da-estrela.ejs">A Hora da Estrela</a>
                         <p class="book-author">Clarice Lispector</p>
                         <div class="stars stars-small" aria-label="5 de 5 estrelas"><span
                                 class="star active">★</span><span class="star active">★</span><span
@@ -48,7 +48,7 @@
                 </article>
                 <article class="book-card">
                     <div class="cover-wrap">
-                        <a class="cover-button" href="livro-o-jardim-secreto.html"
+                        <a class="cover-button" href="livro-o-jardim-secreto.ejs"
                             aria-label="Ver detalhes de O Jardim Secreto"><img
                                 src="https://images.unsplash.com/photo-1529589585661-8fb5cdc75c48?auto=format&fit=crop&w=900&q=85"
                                 alt="Capa ilustrativa de O Jardim Secreto" class="book-cover"></a>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="book-copy">
                         <p class="eyebrow">Literatura clássica</p><a class="book-title"
-                            href="livro-o-jardim-secreto.html">O Jardim Secreto</a>
+                            href="livro-o-jardim-secreto.ejs">O Jardim Secreto</a>
                         <p class="book-author">Frances Hodgson Burnett</p>
                         <div class="stars stars-small" aria-label="5 de 5 estrelas"><span
                                 class="star active">★</span><span class="star active">★</span><span
@@ -74,7 +74,7 @@
                 </article>
                 <article class="book-card">
                     <div class="cover-wrap">
-                        <a class="cover-button" href="livro-memorias-postumas.html"
+                        <a class="cover-button" href="livro-memorias-postumas.ejs"
                             aria-label="Ver detalhes de Memórias Póstumas"><img
                                 src="https://images.unsplash.com/photo-1595123336219-5eedd543bc4a?auto=format&fit=crop&w=900&q=85"
                                 alt="Capa ilustrativa de Memórias Póstumas" class="book-cover"></a>
@@ -90,7 +90,7 @@
                     </div>
                     <div class="book-copy">
                         <p class="eyebrow">Romance brasileiro</p><a class="book-title"
-                            href="livro-memorias-postumas.html">Memórias Póstumas</a>
+                            href="livro-memorias-postumas.ejs">Memórias Póstumas</a>
                         <p class="book-author">Machado de Assis</p>
                         <div class="stars stars-small" aria-label="4 de 5 estrelas"><span
                                 class="star active">★</span><span class="star active">★</span><span
@@ -100,7 +100,7 @@
                 </article>
                 <article class="book-card">
                     <div class="cover-wrap">
-                        <a class="cover-button" href="livro-folhas-de-outono.html"
+                        <a class="cover-button" href="livro-folhas-de-outono.ejs"
                             aria-label="Ver detalhes de Folhas de Outono"><img
                                 src="https://images.unsplash.com/photo-1518281579100-d51bcf505b0e?auto=format&fit=crop&w=900&q=85"
                                 alt="Capa ilustrativa de Folhas de Outono" class="book-cover"></a>
@@ -115,7 +115,7 @@
                         <span class="availability available">Disponível</span>
                     </div>
                     <div class="book-copy">
-                        <p class="eyebrow">Poesia</p><a class="book-title" href="livro-folhas-de-outono.html">Folhas de
+                        <p class="eyebrow">Poesia</p><a class="book-title" href="livro-folhas-de-outono.ejs">Folhas de
                             Outono</a>
                         <p class="book-author">Lívia Azevedo</p>
                         <div class="stars stars-small" aria-label="4 de 5 estrelas"><span
@@ -126,7 +126,7 @@
                 </article>
                 <article class="book-card">
                     <div class="cover-wrap">
-                        <a class="cover-button" href="livro-cartas-ao-amanha.html"
+                        <a class="cover-button" href="livro-cartas-ao-amanha.ejs"
                             aria-label="Ver detalhes de Cartas ao Amanhã"><img
                                 src="https://images.unsplash.com/photo-1531072901881-d644216d4bf9?auto=format&fit=crop&w=900&q=85"
                                 alt="Capa ilustrativa de Cartas ao Amanhã" class="book-cover"></a>
@@ -142,7 +142,7 @@
                     </div>
                     <div class="book-copy">
                         <p class="eyebrow">Ficção contemporânea</p><a class="book-title"
-                            href="livro-cartas-ao-amanha.html">Cartas ao Amanhã</a>
+                            href="livro-cartas-ao-amanha.ejs">Cartas ao Amanhã</a>
                         <p class="book-author">Helena Duarte</p>
                         <div class="stars stars-small" aria-label="3 de 5 estrelas"><span
                                 class="star active">★</span><span class="star active">★</span><span
@@ -152,7 +152,7 @@
                 </article>
                 <article class="book-card">
                     <div class="cover-wrap">
-                        <a class="cover-button" href="livro-a-casa-das-janelas.html"
+                        <a class="cover-button" href="livro-a-casa-das-janelas.ejs"
                             aria-label="Ver detalhes de A Casa das Janelas"><img
                                 src="https://images.unsplash.com/photo-1749822446799-eacea00a0197?auto=format&fit=crop&w=900&q=85"
                                 alt="Capa ilustrativa de A Casa das Janelas" class="book-cover"></a>
@@ -167,7 +167,7 @@
                         <span class="availability available">Disponível</span>
                     </div>
                     <div class="book-copy">
-                        <p class="eyebrow">Mistério</p><a class="book-title" href="livro-a-casa-das-janelas.html">A Casa
+                        <p class="eyebrow">Mistério</p><a class="book-title" href="livro-a-casa-das-janelas.ejs">A Casa
                             das Janelas</a>
                         <p class="book-author">Samuel Nunes</p>
                         <div class="stars stars-small" aria-label="2 de 5 estrelas"><span
@@ -181,4 +181,4 @@
     <%- include('rodape.ejs')%>
         </body>
 
-        </html>
+        </ejs>
