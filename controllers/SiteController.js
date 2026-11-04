@@ -1,30 +1,27 @@
-export default class SiteController {
+class SiteController {
+    home(req, res) {
+        res.render('site/index');
+    }
 
-    constructor() {
+    login(req, res) {
+        res.render('site/conta'); 
+    }
 
-        this.home = async (req, res) => {
-            res.render('site/index');
-        };
+    acervo(req, res) {
+        res.render('site/acervo');
+    }
 
-        this.login = async (req, res) => {
-            res.render('site/conta');
-        };
+    autores(req, res) {
+        res.render('site/autores');
+    }
 
-        this.acervo = async (req, res) => {
-            res.render('site/acervo');
-        };
+    avaliacoes(req, res) {
+        res.render('site/avaliacoes');
+    }
 
-        this.autores = async (req, res) => {
-            res.render('site/autores');
-        };
-
-        this.avaliacoes = async (req, res) => {
-            res.render('site/avaliacoes');
-        };
-
-        this.livroDetalhe = async (req, res) => {
-            res.render('site/livro-detalhe');
-        };
-
+    livroDetalhe(req, res) {
+        res.render('site/livro-detalhe');
     }
 }
+
+export default SiteController;
