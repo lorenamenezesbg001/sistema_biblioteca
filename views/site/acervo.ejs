@@ -1,59 +1,100 @@
-<%- include('cabecalho.ejs')%>
+<%- include('cabecalho.ejs') %>
+
     <main>
         <section class="page-section container">
             <link rel="stylesheet" href="/css/site.css">
+
             <div class="page-intro">
                 <p class="eyebrow">NOSSO ACERVO</p>
                 <h1>Encontre sua próxima leitura</h1>
                 <p>Consulte livros, autores, gêneros e editoras disponíveis no acervo.</p>
             </div>
-            <form class="catalog-search" action="acervo.ejs"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
-                    aria-hidden="true">
+
+            <form class="catalog-search" action="acervo.ejs">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <circle cx="11" cy="11" r="7"></circle>
                     <path d="m20 20-4-4"></path>
-                </svg><input name="busca" placeholder="Pesquisar no acervo" aria-label="Pesquisar no acervo"><button
-                    type="submit">Buscar</button></form>
+                </svg>
+
+                <input name="busca" placeholder="Pesquisar no acervo" aria-label="Pesquisar no acervo">
+
+                <button type="submit">Buscar</button>
+            </form>
+
             <div class="results-row">
-                <p><strong>6</strong> títulos no mostruário</p>
-                <div class="filter-pills"><span
-                        class="active">Todos</span><span>Disponíveis</span><span>Favoritos</span></div>
+                <p><strong>
+                        <%= livros.length %>
+                    </strong> títulos no mostruário</p>
+
+                <div class="filter-pills">
+                    <span class="active">Todos</span>
+                    <span>Disponíveis</span>
+                    <span>Favoritos</span>
+                </div>
             </div>
-            <% for (const {id, titulo, descricao, anoPublicacao, fotoLivro, genero, autor, editora} of livros) { %>
-                <div class="book-grid catalog-grid">
+
+            <div class="book-grid catalog-grid">
+
+                <% for (const {id, titulo, descricao, anoPublicacao, fotoLivro, genero, autor, editora} of livros) { %>
+
                     <article class="book-card">
+
                         <div class="cover-wrap">
+
                             <a class="cover-button" href="/site/livro-detalhe"
-                                aria-label="Ver detalhes de A Hora da Estrela"><img
-                                    src="https://images.unsplash.com/photo-1573125716783-d05b57a86488?auto=format&fit=crop&w=900&q=85"
-                                    alt="Capa ilustrativa de A Hora da Estrela" class="book-cover"></a>
-                            <input class="favorite-toggle" type="checkbox" id="fav-catalog-0"><label
-                                class="heart-button" for="fav-catalog-0" aria-label="Favoritar A Hora da Estrela"><svg
-                                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                aria-label="Ver detalhes de <%= titulo %>">
+
+                                <img src="<%= fotoLivro %>" alt="Capa de <%= titulo %>" class="book-cover">
+                            </a>
+
+                            <input class="favorite-toggle" type="checkbox" id="fav-catalog-<%= id %>">
+
+                            <label class="heart-button" for="fav-catalog-<%= id %>"
+                                aria-label="Favoritar <%= titulo %>">
+
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
                                     aria-hidden="true">
+
                                     <path
                                         d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z">
                                     </path>
-                                </svg></label>
+
+                                </svg>
+                            </label>
+
                             <span class="availability available">Disponível</span>
+
                         </div>
+
                         <div class="book-copy">
-                            <p class="eyebrow">Romance brasileiro</p><a class="book-title" href="/site/livro-detalhe">A
-                                Hora
-                                da Estrela</a>
-                            <p class="book-author">Clarice Lispector</p>
-                            <div class="stars stars-small" aria-label="5 de 5 estrelas"><span
-                                    class="star active">★</span><span class="star active">★</span><span
-                                    class="star active">★</span><span class="star active">★</span><span
-                                    class="star active">★</span></div>
-                            <% } %>
+
+                            <p class="eyebrow">
+                                <%= genero.nome %>
+                            </p>
+
+                            <a class="book-title" href="/site/livro-detalhe">
+                                <%= titulo %>
+                            </a>
+
+                            <p class="book-author">
+                                <%= autor.nome %>
+                            </p>
+
+                            <div class="stars stars-small" aria-label="5 de 5 estrelas">
+
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+
+                            </div>
                         </div>
                     </article>
-                </div>
+                    <% } %>
+            </div>
         </section>
     </main>
-    <%- include('rodape.ejs')%>
-        </body>
-
-        </ejs>
+    <%- include('rodape.ejs') %>

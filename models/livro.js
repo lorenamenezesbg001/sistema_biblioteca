@@ -1,41 +1,47 @@
-import conexao from '../config/conexao.js'
+import conexao from '../config/conexao.js';
 
 const Livro = conexao.Schema({
- titulo: {
- type: String,
- required: true
- },
- descricao: {
- type: String,
- required: true
- },
- anoPublicacao: {
- type: Number,
- required: true
- },
- fotoLivro: {
+    titulo: {
+        type: String,
+        required: true
+    },
+
+    descricao: {
+        type: String,
+        required: true
+    },
+
+    anoPublicacao: {
+        type: Number,
+        required: true
+    },
+
+    fotoLivro: {
         type: Buffer,
         get: (valor) => {
             if (!valor) return null;
+
             return `data:image/png;base64,${valor.toString('base64')}`;
-            return true;
         }
     },
- genero: {
- type: conexao.Types.ObjectId, 
- ref: "Genero",
- required: false,
- },
- autor: {
- type: conexao.Types.ObjectId, 
- ref: "Autor",
- required: false,
- },
- editora: {
- type: conexao.Types.ObjectId, 
- ref: "Editora",
- required: false,
- }
+
+    genero: {
+        type: conexao.Types.ObjectId,
+        ref: "Genero",
+        required: false
+    },
+
+    autor: {
+        type: conexao.Types.ObjectId,
+        ref: "Autor",
+        required: false
+    },
+
+    editora: {
+        type: conexao.Types.ObjectId,
+        ref: "Editora",
+        required: false
+    }
 });
 
-export default conexao.model('Livro',Livro)
+export default conexao.model('Livro', Livro);
