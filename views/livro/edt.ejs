@@ -40,6 +40,14 @@
                             </option>
                             <%})%>
                     </select>
+                    <select name="avaliacao" id="avaliacao" class="form-control">
+                        <option value="5" <%=Livro.avaliacao==5 ? 'selected' : '' %>>5 estrelas</option>
+                        <option value="4" <%=Livro.avaliacao==4 ? 'selected' : '' %>>4 estrelas</option>
+                        <option value="3" <%=Livro.avaliacao==3 ? 'selected' : '' %>>3 estrelas</option>
+                        <option value="2" <%=Livro.avaliacao==2 ? 'selected' : '' %>>2 estrelas</option>
+                        <option value="1" <%=Livro.avaliacao==1 ? 'selected' : '' %>>1 estrela</option>
+                    </select>
+
                     <input type="file" name="fotoLivro"><br>
                     <button type="submit">Cadastrar</button>
         </form>

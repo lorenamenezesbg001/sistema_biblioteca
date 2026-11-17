@@ -50,13 +50,35 @@ export default class SiteController {
 
         // Página de autores
         this.autores = async (req, res) => {
-            res.render('site/autores');
-        };
+        try {
+
+        const autores = await Autor.find();
+
+        res.render('site/autores', { autores });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Erro ao carregar os autores.');
+    }
+};
 
         // Página de avaliações
-        this.avaliacoes = async (req, res) => {
-            res.render('site/avaliacoes');
-        };
+    this.avaliacoes = async (req, res) => {
+    try {
+
+        const livros = await Livro.find()
+            .populate('genero')
+            .populate('autor')
+            .populate('editora');
+
+        res.render('site/avaliacoes', { livros });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Erro ao carregar as avaliações.');
+    }
+};
+
 
         // Detalhes do livro
         this.livroDetalhe = async (req, res) => {

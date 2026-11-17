@@ -41,7 +41,15 @@ const Livro = conexao.Schema({
         type: conexao.Types.ObjectId,
         ref: "Editora",
         required: false
+    },
+
+    avaliacao: {
+        type: Number,
+        min: 1,
+        max: 5,
+        default: 5
     }
+
 });
 
 export default conexao.model('Livro', Livro);

@@ -51,6 +51,7 @@ export default class LivroController {
         genero: jgenero,
         autor: jautor,
         editora: jeditora,
+        avaliacao: req.body.avaliacao,
       });
 
       res.redirect('/' + this.caminhoBase + 'add');
